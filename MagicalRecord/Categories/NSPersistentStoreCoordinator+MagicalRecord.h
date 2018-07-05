@@ -49,3 +49,14 @@ OBJC_EXPORT NSString * __MR_nonnull const kMagicalRecordPSCMismatchCouldNotRecre
 - (void) MR_addiCloudContainerID:(MR_nonnull NSString *)containerID contentNameKey:(MR_nullable NSString *)contentNameKey localStoreAtURL:(MR_nonnull NSURL *)storeURL cloudStorePathComponent:(MR_nullable NSString *)subPathComponent completion:(void (^ __MR_nullable)(void))completionBlock;
 
 @end
+
+#if TARGET_OS_WATCH
+
+#define NSPersistentStoreUbiquitousContentURLKey @"NSPersistentStoreUbiquitousContentURLKey"
+#define NSPersistentStoreUbiquitousContentNameKey @"NSPersistentStoreUbiquitousContentNameKey"
+@interface NSPersistentStoreCoordinator (Aviasales)
+- (void)lock;
+- (void)unlock;
+@end
+
+#endif

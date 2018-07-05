@@ -68,3 +68,9 @@ OBJC_EXPORT NSString * __MR_nonnull const kMagicalRecordDidMergeChangesFromiClou
 - (void) MR_stopObservingiCloudChangesInCoordinator:(MR_nonnull NSPersistentStoreCoordinator *)coordinator;
 
 @end
+
+#if TARGET_OS_WATCH
+
+#define NSPersistentStoreDidImportUbiquitousContentChangesNotification @"NSPersistentStoreDidImportUbiquitousContentChangesNotification"
+
+#endif
